@@ -15,8 +15,9 @@ $ObjPatientRecord = new patientRecord();
     ));  
 
     $c = 1 ;
+    // Getting list of patient id
     $idlist = implode(',',$_POST['id']);
-    $c = "IN (".$idlist.")" ;
+    $c .= " AND patient_id IN (".$idlist.")" ; // condition for specific data
 
     $patient_details = $ObjPatientRecord->patient_details($c);
 

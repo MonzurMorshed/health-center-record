@@ -113,7 +113,9 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
               <input name="PatientName" id="PatientName" value="<?=$PatientName;?>" onclick="removeText('PatientName','Patient Name');" onBlur="addText('PatientName','Patient Name');" type="text" size="32" /> <span>OR</span> <input name="ComapanyName" id="ComapanyName" value="<?=$ComapanyName?>" type="text" size="32" onclick="removeText('ComapanyName','Company Name');" onBlur="addText('ComapanyName','Company Name');" /> <span>OR</span> <input name="HealthCheckupType" id="HealthCheckupType" value="<?=$HealthCheckupType?>" type="text" size="32" onclick="removeText('HealthCheckupType','Health Checkup Type');" onBlur="addText('HealthCheckupType','Health Checkup Type');" /> <input name="Search" type="image" src="images/btn_search.png" alt="Search Record" align="bottom" class="searchbtn" />
         	</form>
 			<input type="submit" name="Export" class="btn btn-success" value="Export to excel"  onClick="exportData()"/>
+            <input type="submit" name="Pdf" class="btn btn-success" value="Export to pdf"  onClick="exportDataAsPdf()"/>
             
+			
         </div><!--/search-->
         
       <!--h3>You searched by <strong>Patient Name</strong></h3-->
@@ -204,7 +206,11 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 				 ?>
 			</form>
         </div><!--/listing-->
-        
+		<a href="javascript:void(0)" id="dlbtn" style="display: none;">
+		<a href="javascript:void(0)" id="pdfdlbtn" style="display: none;">
+		<button type="button" id="mine">Export</button>
+		<button type="button" id="pdf">Pdf</button>
+</a>
       <div class="cf"></div>
     </div>	<!--/container-->
 <!--  end body section --->	
@@ -224,10 +230,41 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 			url : 'custom_export.php',
 			method : 'POST',
 			data : {'id': patientId},
-			success : function(html){
-				console.log('Success');
+			success : function(result){
+				console.log(result);
+	      setTimeout(function() {
+				  var dlbtn = document.getElementById("dlbtn");
+				  var file = new Blob([result], {type: 'text/csv'});
+				  dlbtn.href = URL.createObjectURL(file);
+				  dlbtn.download = 'myfile.csv';
+				  $( "#mine").click();
+				}, 2000);
 			}
 		});
+	}
+
+	function exportDataAsPdf(){
+		let patientId = [];
+		$(".patId").each(function() {
+			if(this.checked){
+				patientId.push($(this).val());
+			}
+		});
+
+		window.open('export_pdf.php?id='+patientId);
+
+
+		// $.ajax({
+		// 	url : 'export_pdf.php',
+		// 	method : 'POST',
+		// 	data : {'id': patientId},
+		// 	success : function(result){
+		// 		console.log(result);
+	    //   		setTimeout(function() {
+		// 		  window.open('export_pdf.php');
+		// 		}, 2000);
+		// 	}
+		// });
 	}
 </script>
 <!-- end -->
