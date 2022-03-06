@@ -1,0 +1,55 @@
+/*-------- /CSS Reset -------------*/
+#card_wrapper {
+	width:/*510px;*/450px;
+	height:300px;
+	margin-top:20px;
+	font-size:10px;
+	color:#000;
+	line-height:14px;
+	display:block;
+}
+#cardwrapper table.front {
+	margin:5px;
+}
+.front, .back {
+	/*border:1px solid #000;*/
+	margin: 2px;
+	/*height:378px;*/
+}
+#card_wrapper .border {
+	border-bottom:/*1px solid #000*/ 1px dashed #ccc;
+}
+#card_wrapper .borderSolid { border-bottom:1px solid #000; }
+#card_wrapper h1 {
+	font-size:13px;
+	margin-top:8px;
+}
+#card_wrapper h1.logoMMA { height:53px; padding-top:9px;/*background:url(../images/logo.png) no-repeat 7px 0; padding-left:60px; padding-top:13px; text-align:center;*/}
+#card_wrapper h1 strong {font-size:14px;}
+#card_wrapper h1 span { font-size:10px; }
+#card_wrapper p {margin-bottom:4px;}
+#card_wrapper h2 {
+	font-size:12px;
+	font-weight:bold;
+	padding:3px;
+}
+.data {
+	margin:2px;
+	/*border:1px solid #000;*/
+}
+.data td {
+	padding:3px;
+	text-align:left;
+}
+.data td table tr td { padding:3px 0;}
+.data td.heading {
+	text-align:center;
+	text-transform:uppercase;
+	font-weight:bold;
+	border-bottom:1px solid #000;
+}
+td.fitness {font-weight:bold; font-size:13px; line-height:23px; height:23px;}
+td.comments {height:44px;}
+td.extra_comments {height:50px; height:45px\9;}
+td.doc {height:35px;}
+.cardprint { height:290px; border:1px solid #000; }

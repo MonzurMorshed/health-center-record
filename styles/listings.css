@@ -1,0 +1,89 @@
+/* 
+	Blue Dream
+	Written by Teylor Feliz  http://www.admixweb.com
+*/
+
+#listing p {text-align:right; font-size:15px; font-weight:bold; margin:10px 0;}
+
+#listing table {
+ background:#D3E4E5;
+ border:1px solid gray;
+ border-collapse:collapse;
+ color:#fff;
+ font:normal 12px verdana, arial, helvetica, sans-serif;
+}
+#listing caption {
+ border:1px solid #5C443A;
+ color:#5C443A;
+ font-weight:bold;
+ padding:6px 4px 8px 0px;
+ text-align:right;
+ text-transform:uppercase;
+ font-style:italic;
+}
+#listing td, #listing th {
+ color:#363636;
+ padding:.4em;
+}
+#listing tr {
+ border:1px dotted gray;
+}
+#listing thead th, #listing tfoot th {
+ background:#A1A87F;
+ color:#FFFFFF;
+ /*padding:3px 10px 3px 10px;*/
+ /*text-align:left;*/
+ text-transform:uppercase;
+}
+#listing tbody td a {
+ color:#363636;
+ text-decoration:none;
+}
+#listing tbody td a:visited {
+ color:gray;
+ text-decoration:line-through;
+}
+#listing tbody td a:hover {
+ text-decoration:underline;
+}
+#listing tbody th a {
+ color:#363636;
+ font-weight:normal;
+ text-decoration:none;
+}
+#listing tbody th a:hover {
+ color:#363636;
+}
+#listing tbody td+td+td+td a {
+ background-image:url('bullet_blue.png');
+ background-position:left center;
+ background-repeat:no-repeat;
+ color:#03476F;
+ padding-left:15px;
+}
+#listing tbody td+td+td+td a:visited {
+ background-image:url('bullet_white.png');
+ background-position:left center;
+ background-repeat:no-repeat;
+}
+#listing tbody th, tbody td {
+ /*text-align:left;*/
+ vertical-align:top;
+}
+#listing tfoot td {
+ background:#5C443A;
+ color:#FFFFFF;
+ padding-top:3px;
+}
+#listing .odd {
+ background:#fff;
+}
+#listing tbody tr:hover {
+ background:#99BCBF;
+ border:1px solid #03476F;
+ color:#000000;
+}
+.pagination 
+{margin-top:14px;}
+.pagination a {margin-left:5px;}
+.pagination a.current {color:#333;}

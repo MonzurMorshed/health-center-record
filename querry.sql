@@ -1,0 +1,1 @@
+ALTER TABLE `patient_record` ADD `Additional Info` TEXT NOT NULL AFTER `Advice` 

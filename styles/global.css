@@ -1,0 +1,295 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Created by Web Virtuoso 15-07-2011*/
+
+
+/*------------ CSS Reset ------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font:normal 100% Arial, Helvetica, sans-serif;
+	background: transparent;
+}
+strong {font-weight:bold;}
+body {
+	line-height: 1;
+}
+body#login {
+	background: #4b570c url(../images/bg_bodylogin.jpg) repeat-x left top;
+}
+body#internal {
+	background: #c3dae7 url(../images/bg_bodyinternal.jpg) repeat-x left top;
+}
+ol, ul {
+	list-style: none;
+}
+a, a:hover {
+	text-decoration: none;
+	color:#24A0CF
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors) */
+fieldset, img {
+  border: 0;
+}
+
+/* to prevent a gap from showing below images in some browsers  */
+img {vertical-align: middle;}
+
+.cf:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.cf { display: inline-block; }
+/* start commented backslash hack \*/
+* html .cf { height: 1%; }
+.cf { display: block; }
+/* close commented backslash hack */
+
+/*-------- /CSS Reset -------------*/
+#login_wrapper {
+	width:967px;
+	margin:7px auto 0 auto;
+}
+.loginBox {width:874px; margin:0 auto;}
+.loginPanel {
+	background:url(../images/bg_loginPanel.jpg) no-repeat left top;
+	width:500px;
+	height:534px;
+}
+.logintable {
+	margin-top:130px;
+}
+.logintable td {
+	height:37px; line-height:37px; padding-bottom:18px;
+}
+.logintable input.textbox {
+	margin-left:38px;
+	width:203px;
+	padding:3px;
+	line-height:23px;
+	border:none 0;
+	background:transparent;
+}
+.loginBtn { position:relative; left:25px; top:10px;}
+.logintable input:focus {
+	background:none;
+}
+.labPic {
+	background:url(../images/bg_login_lab.jpg) no-repeat left top;
+}
+
+#site_wrapper {
+	width:967px;
+	margin:7px auto 0 auto;
+	background:url(../images/header.jpg) no-repeat center top;
+	padding:103px 5px 0 5px;
+}
+#hospName {display:none;}
+#nav {
+	padding-top:5px;
+}
+#nav ul { float:left; }
+#nav ul li {
+	float:left;
+	font-size:14px;
+	line-height:35px;
+	height:35px;
+	margin-right:1px;
+}
+#nav ul li a {
+	background: url(../images/bg_tabs.png) no-repeat right top;
+	height:35px;
+	padding-right:20px;
+	display:block;
+	color:#fff;
+}
+#nav ul li a span {
+	background: url(../images/bg_tabs.png) no-repeat left -36px;
+	height:22px;
+	display:block;
+	padding:10px 0 4px 20px;
+}
+#nav ul li a:hover, #nav ul li a.active {
+	background-position:right -72px;
+	color:#2d2d2d;
+}
+#nav ul li a:hover span, #nav ul li a.active span {
+	background-position:left -108px;
+}
+#nav .logout {
+	float:right;
+	cursor:pointer;
+}
+
+#container {
+	background:#fff;
+	border-top:1px solid #abb5bb;
+	border-bottom: 2px solid #abb5bb;
+	margin-top:15px;
+	padding:7px;
+	color:#155d96;
+	font-size:12px;
+	padding-bottom:40px;
+}
+.errorMsg { background:#EADBAF; padding:10px; color:#8C3612; font-size:12px; }
+/*------form input styles----*/
+input {
+/*	border:1px solid #86a9be;
+	background: #f9f4f3;
+	font-size:12px;
+	color:#83755c;
+	padding:1px 2px 4px 2px;
+	line-height:18px;
+*/	margin:0 7px;
+	display:inline;
+	vertical-align: middle; 
+}
+label {color:#444647; font-size:12px; margin-right:15px;}
+#search {
+	border:1px solid #c1d1da;
+	background:#e3ebf1;
+	padding:5px 12px;
+}
+#search span {
+	color:#2d2d2d;
+	font-weight:bold;
+	margin:0 5px;
+}
+#search input { width:190px;}
+#search input.searchbtn { width:77px; height:25px; border:none 0; vertical-align: middle; margin-left:0;}
+
+#checkType {
+	border:1px solid #9ba298;
+	background:#d0e1c9;
+	margin:10px 0;
+	padding:8px 12px 5px 12px;
+	height:24px;
+}
+.box {
+	margin:10px 0 40px 0;
+}
+.box input {margin:0;}
+.box label {margin-right:7;}
+.titleTab {
+	height:29px;
+	display:inline-block;
+	float:left;
+}
+.titleTab h1 {
+	background:url(../images/bg_titleTab.png) no-repeat right top;
+	padding-right:25px;
+	font-size:12px;
+	color:#155d96;
+	line-height:29px;
+}
+.titleTab h1 span {
+	background:url(../images/bg_titleTab.png) no-repeat left bottom;
+	padding:8px 0 3px 10px;
+	display:inline-block;
+	height:18px;
+	font-weight:bold;
+}
+.box_container {
+	border:1px solid #b6ccde;
+	background: #f1f1f1;
+	position:relative;
+	top:28px;
+	padding:0 15px;
+}
+#container h3 { margin:20px 15px; font-size:15px; color:#434F05; }
+#container h4 { margin:20px auto; font-size:16px; color:#434F05; text-align:center; font-weight:bold; }
+.box_container table { position:relative; top:-10px;}
+.box_container table td { padding-bottom:10px; }
+.box_container table td h2 {font-size:13px; font-weight:bold; color:#333; border-bottom:1px solid #ccc;}
+.box_container table b {margin-right:15px;}
+.box_container table p {margin-bottom:10px;}
+
+table.invest {
+	border-top:1px solid #7E96AA;
+	border-left:1px solid #ccc;
+}
+table.invest th {
+	border-right:1px solid #7E96AA;
+	border-bottom:2px solid #666;
+	background:#7E96AA;
+	line-height:25px;
+	color: #fff;
+	font-size:13px;
+	font-weight:bold;
+	text-align:left;
+	padding: 2px 4px;
+}
+table.invest td {
+	border-bottom:1px solid #ccc;
+	border-right:1px solid #ccc;
+	padding: 2px 4px;
+	color:#444647;
+}
+table.invest td b { font-size:11px;}
+
+.result {
+	padding:15px;
+	background:#CBDBC7;
+	top:-20px;
+}
+.result label { font-size:16px; font-weight:bold; }
+.doctor { position:relative; top:-20px; padding:15px; background:#ABBDC6; }
+.doctor2 { position:relative; top:-20px; padding:15px; background:#ABBDC6; }
+
+.action {text-align:center;}
+
+#footer {
+	background:url(../images/bg_footer.png) no-repeat center top;
+	width:946px;
+	height:39px;
+	margin-top:20px;
+	text-align:right;
+	padding-right:20px;
+	color: #fff;
+	font-size:11px;
+	line-height:39px;
+}
+

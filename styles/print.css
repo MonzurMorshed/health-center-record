@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*Created by Web Virtuoso 15-07-2011*/
+
+
+/*------------ CSS Reset ------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font:normal 100% Arial, Helvetica, sans-serif;
+	background: transparent;
+}
+strong {font-weight:bold;}
+body {
+	line-height: 1;
+}
+body#home {
+	background: #c3dae7 url(../images/bg_body.jpg) repeat-x left top;
+}
+body#internal {
+	background: #c3dae7 url(../images/bg_bodyinternal.jpg) repeat-x left top;
+}
+ol, ul {
+	list-style: none;
+}
+a, a:hover {
+	text-decoration: none;
+	color:#24A0CF
+}
+
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors) */
+fieldset, img {
+  border: 0;
+}
+
+/* to prevent a gap from showing below images in some browsers  */
+img {vertical-align: middle;}
+
+.cf:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+     }
+.cf { display: inline-block; }
+/* start commented backslash hack \*/
+* html .cf { height: 1%; }
+.cf { display: block; }
+/* close commented backslash hack */
+
+/*-------- /CSS Reset -------------*/
+#site_wrapper {
+	/*width:725px;*/
+	margin:3px auto 0 auto;
+	background:url(../images/header.jpg) no-repeat center top;
+	padding:0 2px;
+}
+hospName h1 {text-align:center;}
+#hospName h1 {font-size:23px; font-weight:bold; text-align:center;}
+#hospName ul { list-style:disc; list-style-position:inside; width:650px; margin:5px auto;}
+#hospName li {float:left; font-size:11px; margin-right:20px; }
+#nav { display:none;}
+
+#container {
+	background:#fff;
+	border:1px solid #000;
+	margin-top:15px;
+	padding:3px;
+	color:#000;
+	font-size:11px;
+	padding-bottom:30px;
+}
+/*------form input styles----*/
+#search {display:none;}
+label {margin-right:3px;}
+#checkType {
+	border:1px solid #000;
+	background:#fff;
+	margin:5px 0;
+	padding:3px 3px 1px 3px;
+	height:17px;
+}
+.box {
+	margin:10px 0 30px 0;
+}
+.titleTab {
+	height:18px;
+	display:inline-block;
+	float:left;
+	border:1px solid #000; border-bottom:none;
+}
+.titleTab h1 {
+	padding-right:10px;
+	font-size:12px;
+	color:#000;
+	line-height:18px;
+}
+.titleTab h1 span { 
+	padding:3px 0 3px 5px;
+	display:inline-block;
+	height:18px;
+	font-weight:bold;
+}
+.box_container {
+	border:1px solid #333;
+	background: #fff;
+	position:relative;
+	top:19px;
+	padding:0 0 -15px 0;
+}
+#container h3 { margin:10px 15px; font-size:15px; color:#000; }
+#container h4 { margin:20px auto; font-size:16px; color:#000; text-align:center; font-weight:bold; }
+.box_container table { position:relative; top:-15px;}
+.box_container table td { padding:1px 5px; border-bottom:1px solid #333; }
+.box_container table td h2 {font-size:11px; font-weight:bold; color:#333; border-bottom:1px solid #ccc;}
+.box_container table b {margin-right:15px;}
+.box_container table p {margin-bottom:5px;}
+
+.box_container table.invest {
+	border-top:1px solid #333;
+	border-left:1px solid #333;
+	top:0
+}
+table.invest th {
+	border-right:1px solid #333;
+	border-bottom:1px solid #333;
+	background:#fff;
+	line-height:17px;
+	color: #000;
+	font-size:11px;
+	font-weight:bold;
+	text-align:left;
+	padding:1px 5px;
+}
+table.invest td {
+	border-bottom:1px solid #333;
+	border-right:1px solid #333;
+	padding: 2px 4px;
+	color:#000;
+}
+table.invest td b { font-size:11px;}
+
+.result {
+	padding:10px 15px;
+	background:transparent;
+	top:-10px;
+	border-color:#333;
+	border-top:none 0;
+}
+.result label { font-size:13px; font-weight:bold; }
+.doctor { position:relative; margin-left:190px; float:left; margin-top:-60px; padding:5px; background:transparent; border:none 0; }
+.doctor2 {float:left; position:relative; margin-top:-55px; margin-left:385px; background:transparent; border:none 0; }
+#listing p {text-align:right; color:000; font-size:15px; font-weight:bold; margin:10px 0;}
+
+#listing table {
+ background:#fff;
+ border:1px solid #000;
+ border-collapse:collapse;
+ color:#fff;
+ font:normal 12px verdana, arial, helvetica, sans-serif;
+}
+#listing caption {
+ border:1px solid #000;
+ color:#000;
+ font-weight:bold;
+ padding:6px 4px 8px 0px;
+ text-align:right;
+ text-transform:uppercase;
+ font-style:italic;
+}
+#listing td, #listing th {
+ color:#000;
+ padding:.4em;
+}
+#listing tr {
+ border:1px solid #333;
+}
+#listing thead th, #listing tfoot th {
+ background:#fff;
+ color:#000;
+ /*padding:3px 10px 3px 10px;*/
+ /*text-align:left;*/
+ text-transform:uppercase;
+}
+#listing tbody td a {
+ color:#000;
+ text-decoration:none;
+}
+
+#listing tbody th a {
+ color:#000;
+ font-weight:normal;
+ text-decoration:none;
+}
+
+#listing tbody th, tbody td {
+ /*text-align:left;*/
+ vertical-align:top;
+}
+#listing tfoot td {
+ background:#fff;
+ color:#000;
+ padding-top:3px;
+}
+#listing .odd {
+ background:#fff;
+}
+.pagination {display:none;}
+
+.action {display:none;}
+#footer {display:none;}
+
