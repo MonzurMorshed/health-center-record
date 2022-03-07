@@ -253,18 +253,6 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 
 		window.open('export_pdf.php?id='+patientId);
 
-
-		// $.ajax({
-		// 	url : 'export_pdf.php',
-		// 	method : 'POST',
-		// 	data : {'id': patientId},
-		// 	success : function(result){
-		// 		console.log(result);
-	    //   		setTimeout(function() {
-		// 		  window.open('export_pdf.php');
-		// 		}, 2000);
-		// 	}
-		// });
 	}
 </script>
 <!-- end -->

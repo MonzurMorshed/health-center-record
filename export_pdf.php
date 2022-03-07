@@ -13,6 +13,9 @@ $patient_details = $ObjPatientRecord->patient_details($c);
 $html = '';
 for ($i=0;$i<count($patient_details);$i++){
 
+    if($i != 0){
+      $html .= '<div style="page-break-after: always;"></div>';
+    }
     $ObjPatientRecord->row		= $patient_details[$i];
                     
     $ObjPatientRecord->patient_id 			= $ObjPatientRecord->row['patient_id'];
@@ -388,285 +391,29 @@ else
 $doctor_name = ucfirst($ObjPatientRecord->doctor_name);
 $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
 
-    $html .= '
     
-    <style>
-   
-    /* CSS Document */
-    
-    /*Created by Web Virtuoso 15-07-2011*/
-    
-    
-    /*------------ CSS Reset ------------------*/
-    html, body, div, span, applet, object, iframe,
-    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-    a, abbr, acronym, address, big, cite, code,
-    del, dfn, em, font, img, ins, kbd, q, s, samp,
-    small, strike, strong, sub, sup, tt, var,
-    b, u, i, center,
-    dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      outline: 0;
-      font:normal 100% Arial, Helvetica, sans-serif;
-      background: transparent;
-    }
-    strong {font-weight:bold;}
-    body {
-      line-height: 1;
-    }
-    body#home {
-      background: #c3dae7 url(../images/bg_body.jpg) repeat-x left top;
-    }
-    body#internal {
-      background: #c3dae7 url(../images/bg_bodyinternal.jpg) repeat-x left top;
-    }
-    ol, ul {
-      list-style: none;
-    }
-    a, a:hover {
-      text-decoration: none;
-      color:#24A0CF
-    }
-    
-    blockquote, q {
-      quotes: none;
-    }
-    blockquote:before, blockquote:after,
-    q:before, q:after {
-      content: '';
-      content: none;
-    }
-    
-    /* remember to define focus styles! */
-    :focus {
-      outline: 0;
-    }
-    
-    /* remember to highlight inserts somehow! */
-    ins {
-      text-decoration: none;
-    }
-    del {
-      text-decoration: line-through;
-    }
-    
-    /* tables still need cellspacing="0" in the markup */
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-    /* this is to prevent border from showing around fieldsets and images (i.e., images inside anchors) */
-    fieldset, img {
-      border: 0;
-    }
-    
-    /* to prevent a gap from showing below images in some browsers  */
-    img {vertical-align: middle;}
-    
-    .cf:after {
-         visibility: hidden;
-         display: block;
-         font-size: 0;
-         content: " ";
-         clear: both;
-         height: 0;
-         }
-    .cf { display: inline-block; }
-    /* start commented backslash hack \*/
-    * html .cf { height: 1%; }
-    .cf { display: block; }
-    /* close commented backslash hack */
-    
-    /*-------- /CSS Reset -------------*/
-    #site_wrapper {
-      /*width:725px;*/
-      margin:3px auto 0 auto;
-      background:url(../images/header.jpg) no-repeat center top;
-      padding:0 2px;
-    }
-    hospName h1 {text-align:center;}
-    #hospName h1 {font-size:23px; font-weight:bold; text-align:center;}
-    #hospName ul { list-style:disc; list-style-position:inside; width:650px; margin:5px auto;}
-    #hospName li {float:left; font-size:11px; margin-right:20px; }
-    #nav { display:none;}
-    
-    #container {
-      background:#fff;
-      border:1px solid #000;
-      margin-top:15px;
-      padding:3px;
-      color:#000;
-      font-size:11px;
-      padding-bottom:30px;
-    }
-    /*------form input styles----*/
-    #search {display:none;}
-    label {margin-right:3px;}
-    #checkType {
-      border:1px solid #000;
-      background:#fff;
-      margin:5px 0;
-      padding:3px 3px 1px 3px;
-      height:17px;
-    }
-    .box {
-      margin:10px 0 30px 0;
-    }
-    .titleTab {
-      height:18px;
-      display:inline-block;
-      float:left;
-      border:1px solid #000; border-bottom:none;
-    }
-    .titleTab h1 {
-      padding-right:10px;
-      font-size:12px;
-      color:#000;
-      line-height:18px;
-    }
-    .titleTab h1 span { 
-      padding:3px 0 3px 5px;
-      display:inline-block;
-      height:18px;
-      font-weight:bold;
-    }
-    .box_container {
-      border:1px solid #333;
-      background: #fff;
-      position:relative;
-      top:19px;
-      padding:0 0 -15px 0;
-    }
-    #container h3 { margin:10px 15px; font-size:15px; color:#000; }
-    #container h4 { margin:20px auto; font-size:16px; color:#000; text-align:center; font-weight:bold; }
-    .box_container table { position:relative; top:-15px;}
-    .box_container table td { padding:1px 5px; border-bottom:1px solid #333; }
-    .box_container table td h2 {font-size:11px; font-weight:bold; color:#333; border-bottom:1px solid #ccc;}
-    .box_container table b {margin-right:15px;}
-    .box_container table p {margin-bottom:5px;}
-    
-    .box_container table.invest {
-      border-top:1px solid #333;
-      border-left:1px solid #333;
-      top:0
-    }
-    table.invest th {
-      border-right:1px solid #333;
-      border-bottom:1px solid #333;
-      background:#fff;
-      line-height:17px;
-      color: #000;
-      font-size:11px;
-      font-weight:bold;
-      text-align:left;
-      padding:1px 5px;
-    }
-    table.invest td {
-      border-bottom:1px solid #333;
-      border-right:1px solid #333;
-      padding: 2px 4px;
-      color:#000;
-    }
-    table.invest td b { font-size:11px;}
-    
-    .result {
-      padding:10px 15px;
-      background:transparent;
-      top:-10px;
-      border-color:#333;
-      border-top:none 0;
-    }
-    .result label { font-size:13px; font-weight:bold; }
-    .doctor { position:relative; margin-left:190px; float:left; margin-top:-60px; padding:5px; background:transparent; border:none 0; }
-    .doctor2 {float:left; position:relative; margin-top:-55px; margin-left:385px; background:transparent; border:none 0; }
-    #listing p {text-align:right; color:000; font-size:15px; font-weight:bold; margin:10px 0;}
-    
-    #listing table {
-     background:#fff;
-     border:1px solid #000;
-     border-collapse:collapse;
-     color:#fff;
-     font:normal 12px verdana, arial, helvetica, sans-serif;
-    }
-    #listing caption {
-     border:1px solid #000;
-     color:#000;
-     font-weight:bold;
-     padding:6px 4px 8px 0px;
-     text-align:right;
-     text-transform:uppercase;
-     font-style:italic;
-    }
-    #listing td, #listing th {
-     color:#000;
-     padding:.4em;
-    }
-    #listing tr {
-     border:1px solid #333;
-    }
-    #listing thead th, #listing tfoot th {
-     background:#fff;
-     color:#000;
-     /*padding:3px 10px 3px 10px;*/
-     /*text-align:left;*/
-     text-transform:uppercase;
-    }
-    #listing tbody td a {
-     color:#000;
-     text-decoration:none;
-    }
-    
-    #listing tbody th a {
-     color:#000;
-     font-weight:normal;
-     text-decoration:none;
-    }
-    
-    #listing tbody th, tbody td {
-     /*text-align:left;*/
-     vertical-align:top;
-    }
-    #listing tfoot td {
-     background:#fff;
-     color:#000;
-     padding-top:3px;
-    }
-    #listing .odd {
-     background:#fff;
-    }
-    .pagination {display:none;}
-    
-    .action {display:none;}
-    #footer {display:none;}
-    
-    
-    </style>
-    
-    ';
 
     $html .= '
+
+            
     
-    
-    
-    <div><br/></div>
-    <div id="checkType">
-                <div style="float:left">
-                    <strong>Checkup Type: </strong> '.$checkuptype.'
-                </div>
-                <div style="float:right;"><strong>Company Name: </strong> <span class="company">'.$ObjPatientRecord->company_name.'</span></div>        
-            </div>
-            <div class="box">
-                <div class="titleTab"><h1><span>Personal Details</span></h1></div>
-                    <div class="box_container">
-                        <table width="100%" border="1" cellspacing="0" cellpadding="0">
+            <div id="titleTab">
+                <table border="0" cellspacing="5" cellpadding="5">
+                  <tr>
+                    <td ><strong>Checkup Type: </strong> '.$checkuptype.'</td>
+                    <td style="float:right;"><strong>Company Name: </strong> <span class="">'.$ObjPatientRecord->company_name.'</span></td>
+                  </tr>  
+                </table>     
+            
+                <p style="border:1px solid #000;border-radius:5px;width:20%">
+                  <strong style="padding-left: 10px;margin-top: 10px;">Personal Details</strong>
+                </p>
+                
+                <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                                <td width="130"><label>Name:</label></td>
-                                <td width="300">'.$ObjPatientRecord->patient_name.'</td>
-                                <td width="130"><label>Education:</label></td>
+                                <td width="20%"><label>Name:</label></td>
+                                <td width="35%">'.$ObjPatientRecord->patient_name.'</td>
+                                <td width="20%"><label>Education:</label></td>
                                 <td>'.$ObjPatientRecord->patient_education.'</td>
                             </tr>
 
@@ -691,24 +438,22 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                                 <td>'.$marital_status.'</td>                                
                               </tr>
                             </table>
-                        </div>      
-                    </div>
-                </div>
-            </div>
+                       
 
-            <div class="box">
-                    	<div class="titleTab"><h1><span>Work Profile</span></h1></div>
-                        <div class="box_container">
-                        	<table width="100%" border="1" cellspacing="0" cellpadding="0">
+                <p style="border:1px solid #000;border-radius:5px;width:20%">
+                            <strong style="padding-left: 10px;margin-top: 10px;">Work Profile</strong>
+                          </p>
+           
+                        	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
-                                <td width="130" align="left"><label>Type of Industry:</label></td>
-                                <td width="275" align="left">'.$ObjPatientRecord->type_of_industry.'</td>
-                                <td width="120" align="left"><label>Nature of Work:</label></td>
+                                <td width="20%" align="left"><label>Type of Industry:</label></td>
+                                <td width="35%" align="left">'.$ObjPatientRecord->type_of_industry.'</td>
+                                <td width="20%" align="left"><label>Nature of Work:</label></td>
                                 <td align="left">'.$ObjPatientRecord->nature_of_work.'</td>
                               </tr>
                               <tr>
-                                <td align="left" width="130"><label>Duration of Service:</label></td>
-                                <td align="left" width="275">
+                                <td align="left" width="20%"><label>Duration of Service:</label></td>
+                                <td align="left" width="35%">
                                 '.$ObjPatientRecord->services_years.' <b>Yrs.</b>
                                 '.$ObjPatientRecord->service_month.' <b>Mths.</b>
                                 </td>
@@ -716,13 +461,14 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                                 <td align="left">'.$ObjPatientRecord->ppe_used.'</td>
                               </tr>
                             </table>
-         				</div>
-              		</div>
-                    
-                    <div class="box">
-                    	<div class="titleTab"><h1><span>Health Status</span></h1></div>
-                        <div class="box_container">
-                        	<table width="100%" border="1" cellspacing="0" cellpadding="0">
+
+
+                            <p style="border:1px solid #000;width:150px">
+                            <strong style="padding-left: 10px;margin-top: 10px;">Health Status</strong>
+                          </p>
+                            
+         		
+                        	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
                                 <td width="25%" valign="top"><label>Habits:</label></td>
                                 <td colspan="3" valign="top">'.$habits_str.'</td>
@@ -739,21 +485,16 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                               </tr>
                               <tr>
                                 <td valign="top"> </td>
-                                <td colspan="3" valign="top">
-									
-Mother: '.$mother_str.'
-
-								</td>
+                                <td colspan="3" valign="top">Mother: '.$mother_str.'</td>
                               </tr>
                               <tr>
                                 <td valign="top"><label>Physical Handicaps:</label></td>
                                 <td width="30%" valign="top">'.$ObjPatientRecord->pysical_handicap.'</td>
-                                <td width="125" valign="top"><label>Present Complaints:</label></td>
+                                <td width="20%" valign="top"><label>Present Complaints:</label></td>
                                 <td valign="top">'.$ObjPatientRecord->present_compliaints.'</td>
                               </tr>
                               <tr>
-                                <td valign="top"><label>H/O Any Occupation Related<br />
-Health Hazard:</label></td>
+                                <td valign="top"><label>H/O Any Occupation Related<br />Health Hazard:</label></td>
                                 <td valign="top">'.$ObjPatientRecord->HO_health_hazatd.'</td>
                                 <td valign="top"><label>Bowels / Micturation:</label></td>
                                 <td valign="top">'.$ObjPatientRecord->mutation.'</td>
@@ -772,17 +513,16 @@ Health Hazard:</label></td>
                                 <td valign="top"> </td>
                               </tr>
                             </table>
-         				</div>
-              		</div>
-
-
-                      <div class="box">
-                      <div class="titleTab"><h1><span>Examination</span></h1></div>
-                      <div class="box_container">
-                          
-                          <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                            
+                            <p style="border:1px solid #000;width:150px">
+                            <strong style="padding-left: 10px;margin-top: 10px;">Examination</strong>
+                          </p>
+                            
+                          <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                              <td colspan="5"><h2>I GENERAL</h2></td>
+                              <td colspan="5">
+                                  <strong style="padding-left: 10px;margin-top: 10px;">I GENERAL</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td width="20%" align="left"><label>Height:</label>'.$ObjPatientRecord->height.' <b>Mtrs.</b></td>
@@ -800,15 +540,17 @@ Health Hazard:</label></td>
                               </td>
                             </tr>
                           </table>
-          <br />
-                          <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                          <br />
+                          <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                              <td colspan="4"><h2>II SYSTEMIC</h2></td>
-                            </tr>
+                              <td colspan="5">
+                                <strong style="padding-left: 10px;margin-top: 10px;">II SYSTEMIC</strong>
+                              </td>
+                             </tr>
                             <tr>
-                              <td width="5%"><label>CVS:</label></td>
-                              <td width="44%">'.$ObjPatientRecord->CVS.'</td>
-                              <td width="5%"><label>RS:</label></td>
+                              <td width="7%"><label>CVS:</label></td>
+                              <td width="43%">'.$ObjPatientRecord->CVS.'</td>
+                              <td width="7%"><label>RS:</label></td>
                               <td width="43%">'.$ObjPatientRecord->RS.'</td>
                             </tr>
                             <tr>
@@ -819,15 +561,17 @@ Health Hazard:</label></td>
                             </tr>
                           </table>
                           <br />
-                          <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                          <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                              <td colspan="3"><h2>III SPECIFIC</h2></td>
+                              <td colspan="5">
+                                <strong style="padding-left: 10px;margin-top: 10px;">III SPECIFIC</strong>
+                              </td>
                             </tr>
                             <tr>
                               <td width="7%"><label>Vision:</label></td>
-                              <td><b style="margin-right:3px;">Left Eye:</b>'.$ObjPatientRecord->visual_acuityLeft.'
+                              <td width="46%"><b style="margin-right:3px;">Left Eye:</b>'.$ObjPatientRecord->visual_acuityLeft.'
                               <b style="margin-right:3px; margin-left:12px;">Right Eye:</b>'.$ObjPatientRecord->visual_acuityRight.'</td>
-                              <td width="49%"><label>Colour Vision:</label>'.$ObjPatientRecord->color_version.'</td>
+                              <td width="47%"><label>Colour Vision:</label>'.$ObjPatientRecord->color_version.'</td>
                             </tr>
                             <tr>
                               <td><label>Audiometry:</label></td>
@@ -838,16 +582,15 @@ Health Hazard:</label></td>
                               <td><label>Lung Function test (P.E.F.R.):</label>'.$ObjPatientRecord->lungFunction.'<b> L/min</b></td>
                             </tr>
                           </table>
-                       </div>
-                    </div>
 
-                    <div class="box">
-                    	<div class="titleTab"><h1><span>Investigations</span></h1></div>
-                        <div class="box_container">
-                        	<table width="100%" border="1" cellspacing="0" cellpadding="0">
+                          <p style="border:1px solid #000;width:150px">
+                          <strong style="padding-left: 10px;margin-top: 10px;">Investigations</strong>
+                        </p>
+                   
+                        	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
-                                <td valign="top">
-                                	<table width="100%" border="1" cellspacing="0" cellpadding="0" class="invest">
+                                <td width="40%" valign="top">
+                                	<table width="100%" border="1" cellspacing="0" cellpadding="5" class="invest">
                                       <thead>
                                       <tr>
                                         <th>CBC</th>
@@ -892,9 +635,9 @@ Health Hazard:</label></td>
                                       </tr>
                                     </table>
                                 </td>
-                                <td width="40" valign="top"> </td>
-                                <td valign="top">
-                                	<table width="100%" border="1" cellspacing="0" cellpadding="0" class="invest">
+                                <td width="20%" valign="top"> </td>
+                                <td width="40%">
+                                	<table width="100%" border="1" cellspacing="0" cellpadding="5" class="invest">
                                       <thead>
                                       <tr>
                                         <th>Urine Test</th>
@@ -930,12 +673,12 @@ Health Hazard:</label></td>
                               </tr>
                               <tr>
                                 <td colspan="3" valign="top" style="padding:0; border-bottom:none">
-                                <table width="100%" border="1" cellspacing="0" cellpadding="0" style="top:0;">
+                                <table width="100%" border="1" cellspacing="0" cellpadding="5" style="top:0;">
                                   <tr>
                                     <td width="15%"><label>Blood Group:</label><br />
 										'.$ObjPatientRecord->blood_group.'
                                     </td>
-                                      <td width="15%"><label>Rh Factor:</label><br />
+                                      <td width="30%"><label>Rh Factor:</label><br />
                                             '.$ObjPatientRecord->RHfactor.'
                                       </td>
                                       <td width="15%"><label>ESR:</label><br />
@@ -967,16 +710,15 @@ Health Hazard:</label></td>
                                 </table></td>
                               </tr>
                             </table>
-         				</div>
-              		</div>
+                            
+                            <p style="border:1px solid #000;width:150px">
+                          <strong style="padding-left: 10px;margin-top: 10px;">Comment &amp; Advice</strong>
+                        </p>
 
-                      <div class="box">
-                      <div class="titleTab"><h1><span>Comment &amp; Advice</span></h1></div>
-                      <div class="box_container">
-                          <table width="100%" border="1" cellspacing="0" cellpadding="0">
+                          <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                              <td width="140" valign="top"><label>Comment:</label></td>
-                              <td align="left" valign="top">'.$ObjPatientRecord->comment.'</td>
+                              <td width="25%" valign="top"><label>Comment:</label></td>
+                              <td width="75%" align="left" valign="top">'.$ObjPatientRecord->comment.'</td>
                             </tr>
                             <tr>
                               <td valign="top"><label>Advice:</label></td>
@@ -987,23 +729,26 @@ Health Hazard:</label></td>
                               <td align="left" valign="top">'.$ObjPatientRecord->Additional_Info.'</td>
                             </tr>
                           </table>
-                       </div>
-                    </div>
+
+
+                  <br/>
                   
                   <div class="box_container result">
                           <label>Medical Fitness:</label> 
                           <label>'.$medical_fitness.'</label>
                   </div>
-                  
-                  <div class="box_container doctor">
-                        Dr. '.$doctor_name .','.$ObjPatientRecord->docyor_qualification.'
-                   </div>
-                  <div class="box_container doctor2">
-                          <strong>Authorized Certifying Surgeon:</strong> Dr. " . '.$surgeonName.', '.$ObjPatientRecord->surgeonQualifications.'
-                   </div>
+
+                  <br/>
+
+                  <strong style="padding-left: 10px;margin-top: 10px;">Dr. '.$doctor_name .','.$ObjPatientRecord->docyor_qualification.'</strong><br/>
+                  <strong style="padding-left: 10px;margin-top: 10px;">Investigations</strong>Dr. '.$surgeonName.', '.$ObjPatientRecord->surgeonQualifications.'
+
     ';
 
 }
+
+// print_r($html);
+// exit;
 
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF/tcpdf.php');
@@ -1011,18 +756,10 @@ require_once('TCPDF/tcpdf.php');
 // create new PDF document
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
-// set document information
-// $pdf->setCreator(PDF_CREATOR);
-// $pdf->setAuthor('Nicola Asuni');
-// $pdf->setTitle('TCPDF Example 001');
-// $pdf->setSubject('TCPDF Tutorial');
-// $pdf->setKeywords('TCPDF, PDF, example, test, guide');
+// // set default header data
+// $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
 
-// set default header data
-// $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 001', PDF_HEADER_STRING, array(0,64,255), array(0,64,128));
-// $pdf->setFooterData(array(0,64,0), array(0,64,128));
-
-// set header and footer fonts
+// // set header and footer fonts
 // $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
 // $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
@@ -1030,7 +767,7 @@ $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8',
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
-$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+// $pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->setHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
@@ -1040,28 +777,22 @@ $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
-
-
 // ---------------------------------------------------------
 
 // set default font subsetting mode
-$pdf->setFontSubsetting(true);
+// $pdf->setFontSubsetting(true);
 
 
-$pdf->setFont('dejavusans', '', 12, '', true);
+$pdf->setFont('dejavusans', '', 10, '', true);
 
 
 $pdf->AddPage();
 
 
-$pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
+// $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
 
 
-$pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+// $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
+$pdf->writeHTML($html, true, false, true, false, '');
 
-
-$pdf->Output('example_001.pdf', 'I');
-
-//============================================================+
-// END OF FILE
-//============================================================+
+$pdf->Output('health_record.pdf', 'I'); // Download use - D
