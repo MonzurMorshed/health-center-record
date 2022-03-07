@@ -207,9 +207,9 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 			</form>
         </div><!--/listing-->
 		<a href="javascript:void(0)" id="dlbtn" style="display: none;">
-		<a href="javascript:void(0)" id="pdfdlbtn" style="display: none;">
+		<!-- <a href="javascript:void(0)" id="pdfdlbtn" style="display: none;"> -->
 		<button type="button" id="mine">Export</button>
-		<button type="button" id="pdf">Pdf</button>
+		<!-- <button type="button" id="pdf">Pdf</button> -->
 </a>
       <div class="cf"></div>
     </div>	<!--/container-->
@@ -231,15 +231,15 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 			method : 'POST',
 			data : {'id': patientId},
 			success : function(result){
-				console.log(result);
-	      setTimeout(function() {
-				  var dlbtn = document.getElementById("dlbtn");
-				  var file = new Blob([result], {type: 'text/csv'});
-				  dlbtn.href = URL.createObjectURL(file);
-				  dlbtn.download = 'myfile.csv';
-				  $( "#mine").click();
-				}, 2000);
-			}
+
+				setTimeout(function() {
+						var dlbtn = document.getElementById("dlbtn");
+						var file = new Blob([result], {type: 'text/csv'});
+						dlbtn.href = URL.createObjectURL(file);
+						dlbtn.download = 'myfile.csv';
+						$( "#mine").click();
+						}, 2000);
+					}
 		});
 	}
 
