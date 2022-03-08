@@ -31,13 +31,20 @@ else
 	if(isset($_POST["Import"])){
 		
 		$filename=$_FILES["file"]["tmp_name"];		
-
+		$c=1;
 		if($_FILES["file"]["size"] > 0)
 		{
+			// $patient_reord = $ObjPatientRecord->patient_details($c);
+
+			// foreach($patient_reord as $row){
+
+			// }
+
 			$file = fopen($filename, "r");
+			$i = 0;
 	        while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
 			{
-				
+				if ($i == 0) { $i++; continue; }
 				$sql = "INSERT INTO patient_record 
                 values (
 					
@@ -58,9 +65,33 @@ else
 					'".$getData[94]."','".$getData[95]."','".$getData[96]."','".$getData[97]."','".$getData[98]."','".$getData[99]."','".$getData[100]."',
 					'".$getData[101]."','".$getData[102]."','".$getData[103]."',
 					'".$getData[104]."','".$getData[105]."','".$getData[106]."','".$getData[107]."','".$getData[10]."'
-				)";
+				)  
+				
+				ON DUPLICATE KEY UPDATE   
+
+				checkup_type='".$getData[1]."',company_name='".$getData[2]."',patient_name='".$getData[3]."',patient_education='".$getData[4]."',patient_birth_date='".$getData[5]."',
+				patient_age='".$getData[6]."',identification_mark='".$getData[7]."',patient_sex='".$getData[8]."',date_of_examination='".$getData[9]."',mariatal_status='".$getData[10]."',type_of_industry='".$getData[11]."'
+				,services_years='".$getData[12]."',service_month='".$getData[13]."',nature_of_work='".$getData[14]."',
+				ppe_used='".$getData[15]."',smoking='".$getData[16]."',alcohol='".$getData[17]."',tobaco='".$getData[18]."',gutakha='".$getData[19]."',	habit_other='".$getData[20]."',habit_otherText='".$getData[21]."',habit_none='".$getData[22]."'
+				,past_illness_record='".$getData[23]."',father_idh='".$getData[24]."',father_htn='".$getData[25]."',father_dn='".$getData[26]."',father_asthama='".$getData[27]."',father_koch='".$getData[28]."',
+				father_tremors='".$getData[29]."',father_other='".$getData[30]."',father_otherText='".$getData[31]."',father_none='".$getData[32]."',mother_idh='".$getData[33]."',mother_htn='".$getData[34]."',mother_dm='".$getData[35]."',mother_asthama='".$getData[36]."',mother_koch='".$getData[37]."'
+				,mother_tremors='".$getData[38]."',mother_other='".$getData[39]."',mother_otherText='".$getData[40]."',	mother_none='".$getData[41]."'
+				,pysical_handicap='".$getData[42]."','HO_health_hazatd=".$getData[43]."',
+				HO_allergies='".$getData[44]."',HO_exposure='".$getData[45]."','".$getData[46]."','".$getData[47]."','".$getData[48]."','".$getData[49]."','".$getData[50]."','".$getData[51]."','".$getData[52]."'
+				,'".$getData[53]."','".$getData[54]."','".$getData[55]."','".$getData[56]."','".$getData[57]."','".$getData[58]."',
+				'".$getData[59]."','".$getData[60]."','".$getData[61]."','".$getData[62]."','".$getData[63]."','".$getData[64]."','".$getData[65]."','".$getData[66]."','".$getData[67]."'
+				,'".$getData[68]."','".$getData[69]."','".$getData[70]."','".$getData[71]."','".$getData[72]."','".$getData[73]."',
+				'".$getData[74]."','".$getData[75]."','".$getData[76]."','".$getData[77]."','".$getData[78]."','".$getData[79]."','".$getData[80]."'
+				,'".$getData[81]."','".$getData[82]."','".$getData[83]."',
+				'".$getData[84]."','".$getData[85]."','".$getData[86]."','".$getData[87]."','".$getData[88]."','".$getData[89]."','".$getData[90]."',
+				'".$getData[91]."','".$getData[92]."','".$getData[93]."',
+				'".$getData[94]."','".$getData[95]."','".$getData[96]."','".$getData[97]."','".$getData[98]."','".$getData[99]."','".$getData[100]."',
+				'".$getData[101]."','".$getData[102]."','".$getData[103]."',
+				'".$getData[104]."','".$getData[105]."','".$getData[106]."','".$getData[107]."','".$getData[10]."'
+				";
 
 				$result = $db->executeQuery($sql);
+				$i++;
 	         }
 			
 	         fclose($file);	
