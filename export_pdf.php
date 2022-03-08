@@ -394,8 +394,14 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
     
 
     $html .= '
+    
 
-            
+    
+    <h3 style="#738809;text-align:center;">M. M. A. Hospital, Occupational Health Center</h3>
+
+    <span style="font-size:11px" >Near Telephone Exchange, MIDC, Mahad - Raigad.</span>
+    <span style="font-size:11px" >Tel: (02145) 232562, 233879</span>
+    <span style="font-size:11px" >E-mail: mmahospital@gmail.com   </span>  
     
             <div id="titleTab">
                 <table border="0" cellspacing="5" cellpadding="5">
@@ -411,9 +417,9 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                 
                 <table width="100%" border="1" cellspacing="0" cellpadding="5">
                             <tr>
-                                <td width="20%"><label>Name:</label></td>
-                                <td width="35%">'.$ObjPatientRecord->patient_name.'</td>
-                                <td width="20%"><label>Education:</label></td>
+                                <td width="30%"><label>Name:</label></td>
+                                <td width="30%">'.$ObjPatientRecord->patient_name.'</td>
+                                <td width="15%"><label>Education:</label></td>
                                 <td>'.$ObjPatientRecord->patient_education.'</td>
                             </tr>
 
@@ -446,14 +452,14 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
            
                         	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
-                                <td width="20%" align="left"><label>Type of Industry:</label></td>
-                                <td width="35%" align="left">'.$ObjPatientRecord->type_of_industry.'</td>
-                                <td width="20%" align="left"><label>Nature of Work:</label></td>
+                                <td width="25%" align="left"><label>Type of Industry:</label></td>
+                                <td width="25%" align="left">'.$ObjPatientRecord->type_of_industry.'</td>
+                                <td width="25%" align="left"><label>Nature of Work:</label></td>
                                 <td align="left">'.$ObjPatientRecord->nature_of_work.'</td>
                               </tr>
                               <tr>
-                                <td align="left" width="20%"><label>Duration of Service:</label></td>
-                                <td align="left" width="35%">
+                                <td align="left" width="25%"><label>Duration of Service:</label></td>
+                                <td align="left" width="25%">
                                 '.$ObjPatientRecord->services_years.' <b>Yrs.</b>
                                 '.$ObjPatientRecord->service_month.' <b>Mths.</b>
                                 </td>
@@ -470,8 +476,8 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
          		
                         	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
-                                <td width="25%" valign="top"><label>Habits:</label></td>
-                                <td colspan="3" valign="top">'.$habits_str.'</td>
+                                <td width="35%" valign="top"><label>Habits:</label></td>
+                                <td width="65%" colspan="3" valign="top">'.$habits_str.'</td>
                               </tr>
                               <tr>
                                 <td valign="top"><label>Any Past Illness / Surgery:</label></td>
@@ -489,8 +495,8 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                               </tr>
                               <tr>
                                 <td valign="top"><label>Physical Handicaps:</label></td>
-                                <td width="30%" valign="top">'.$ObjPatientRecord->pysical_handicap.'</td>
-                                <td width="20%" valign="top"><label>Present Complaints:</label></td>
+                                <td width="22%" valign="top">'.$ObjPatientRecord->pysical_handicap.'</td>
+                                <td width="21%" valign="top"><label>Present Complaints:</label></td>
                                 <td valign="top">'.$ObjPatientRecord->present_compliaints.'</td>
                               </tr>
                               <tr>
@@ -513,7 +519,7 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                                 <td valign="top"> </td>
                               </tr>
                             </table>
-                            
+                         
                             <p style="border:1px solid #000;width:150px">
                             <strong style="padding-left: 10px;margin-top: 10px;">Examination</strong>
                           </p>
@@ -528,10 +534,10 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                               <td width="20%" align="left"><label>Height:</label>'.$ObjPatientRecord->height.' <b>Mtrs.</b></td>
                               <td width="20%" align="left"><label>Weight:</label>'.$ObjPatientRecord->weight.' <b>Kg.</b>
                               </td>
-                              <td width="20%" align="left"><label>BMI:</label>'.$ObjPatientRecord->BMI.'</td>
-                              <td width="20%" align="left"><label>B.P.:</label>'.$ObjPatientRecord->BP.' <b>mmhg</b>
+                              <td width="17%" align="left"><label>BMI:</label>'.$ObjPatientRecord->BMI.'</td>
+                              <td width="25%" align="left"><label>B.P.:</label>'.$ObjPatientRecord->BP.' <b>mmhg</b>
                               </td>
-                              <td width="20%" align="left"><label>Pulse:</label>'.$ObjPatientRecord->pulse.'<b> / Min.</b>
+                              <td width="18%" align="left"><label>Pulse:</label>'.$ObjPatientRecord->pulse.'<b> / Min.</b>
                               </td>
                             </tr>
                             <tr>
@@ -568,10 +574,10 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                               </td>
                             </tr>
                             <tr>
-                              <td width="7%"><label>Vision:</label></td>
-                              <td width="46%"><b style="margin-right:3px;">Left Eye:</b>'.$ObjPatientRecord->visual_acuityLeft.'
+                              <td width="15%"><label>Vision:</label></td>
+                              <td width="45%"><b style="margin-right:3px;">Left Eye:</b>'.$ObjPatientRecord->visual_acuityLeft.'
                               <b style="margin-right:3px; margin-left:12px;">Right Eye:</b>'.$ObjPatientRecord->visual_acuityRight.'</td>
-                              <td width="47%"><label>Colour Vision:</label>'.$ObjPatientRecord->color_version.'</td>
+                              <td width="40%"><label>Colour Vision:</label>'.$ObjPatientRecord->color_version.'</td>
                             </tr>
                             <tr>
                               <td><label>Audiometry:</label></td>
@@ -589,13 +595,13 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                    
                         	<table width="100%" border="1" cellspacing="0" cellpadding="5">
                               <tr>
-                                <td width="40%" valign="top">
+                                <td width="60%" valign="top">
                                 	<table width="100%" border="1" cellspacing="0" cellpadding="5" class="invest">
                                       <thead>
                                       <tr>
-                                        <th>CBC</th>
-                                        <th>Employees Values</th>
-                                        <th>Normal Values</th>
+                                        <th width="35%">CBC</th>
+                                        <th width="35%">Employees Values</th>
+                                        <th width="30%">Normal Values</th>
                                       </tr>
                                       </thead>
                                       <tr>
@@ -635,7 +641,7 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
                                       </tr>
                                     </table>
                                 </td>
-                                <td width="20%" valign="top"> </td>
+                                
                                 <td width="40%">
                                 	<table width="100%" border="1" cellspacing="0" cellpadding="5" class="invest">
                                       <thead>
@@ -747,9 +753,6 @@ $surgeonName = ucfirst($ObjPatientRecord->surgeonName);
 
 }
 
-// print_r($html);
-// exit;
-
 // Include the main TCPDF library (search for installation path).
 require_once('TCPDF/tcpdf.php');
 
@@ -757,22 +760,25 @@ require_once('TCPDF/tcpdf.php');
 $pdf = new TCPDF(PDF_PAGE_ORIENTATION, PDF_UNIT, PDF_PAGE_FORMAT, true, 'UTF-8', false);
 
 // // set default header data
-// $pdf->setHeaderData(PDF_HEADER_LOGO, PDF_HEADER_LOGO_WIDTH, PDF_HEADER_TITLE.' 006', PDF_HEADER_STRING);
+// $pdf->setHeaderData('', PDF_HEADER_LOGO_WIDTH, $title, PDF_HEADER_STRING);
+
+$pdf->setPrintHeader(false);
+$pdf->setPrintFooter(false);
 
 // // set header and footer fonts
-// $pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
-// $pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
+$pdf->setHeaderFont(Array(PDF_FONT_NAME_MAIN, '', PDF_FONT_SIZE_MAIN));
+$pdf->setFooterFont(Array(PDF_FONT_NAME_DATA, '', PDF_FONT_SIZE_DATA));
 
 // set default monospaced font
 $pdf->setDefaultMonospacedFont(PDF_FONT_MONOSPACED);
 
 // set margins
-// $pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
+$pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->setHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
 // set auto page breaks
-$pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
+// $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
 // set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
@@ -795,4 +801,4 @@ $pdf->AddPage();
 // $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 $pdf->writeHTML($html, true, false, true, false, '');
 
-$pdf->Output('health_record.pdf', 'I'); // Download use - D
+$pdf->Output('health_record.pdf', 'D'); // Download use - D
