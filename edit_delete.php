@@ -112,8 +112,8 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
               <strong>Search Record by:</strong>
               <input name="PatientName" id="PatientName" value="<?=$PatientName;?>" onclick="removeText('PatientName','Patient Name');" onBlur="addText('PatientName','Patient Name');" type="text" size="32" /> <span>OR</span> <input name="ComapanyName" id="ComapanyName" value="<?=$ComapanyName?>" type="text" size="32" onclick="removeText('ComapanyName','Company Name');" onBlur="addText('ComapanyName','Company Name');" /> <span>OR</span> <input name="HealthCheckupType" id="HealthCheckupType" value="<?=$HealthCheckupType?>" type="text" size="32" onclick="removeText('HealthCheckupType','Health Checkup Type');" onBlur="addText('HealthCheckupType','Health Checkup Type');" /> <input name="Search" type="image" src="images/btn_search.png" alt="Search Record" align="bottom" class="searchbtn" />
         	</form>
-			<input type="submit" name="Export" class="btn btn-success" value="Export to excel"  onClick="exportData()"/>
-            <input type="submit" name="Pdf" class="btn btn-success" value="Export to pdf"  onClick="exportDataAsPdf()"/>
+			<input type="submit" name="Export" disabled="true" class="exportdata btn btn-success" value="Export to excel"  onClick="exportData()"/>
+            <input type="submit" name="Pdf" disabled="true" class="exportdata btn btn-success" value="Export to pdf"  onClick="exportDataAsPdf()"/>
             
 			
         </div><!--/search-->
@@ -126,7 +126,7 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 				  <thead>
 				  <tr>
-				  	<th>Sl</th>
+				  	<th><input class="check_all" type="checkbox"/>Sl</th>
 					<th width="4%" align="right">ID</th>
 					<th align="left">Patient Name</th>
 					<th align="left">Company Name</th>
@@ -218,7 +218,35 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 <!-- ajax for selected row export -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
+
+	$(".check_all").on("click", function () {
+		if ($("input:checkbox").prop("checked")) {
+			$(".exportdata").prop('disabled',false);
+			$("input:checkbox[name='patient_id[]']").prop("checked", true);
+		} else {
+			$(".exportdata").prop('disabled',true);
+			$("input:checkbox[name='patient_id[]']").prop("checked", false);
+		}
+	});
+
+	// $('input:checkbox').click(function() {
+	// 	if ($(this).is(':checked')) {
+	// 	$('.exportdata').prop("disabled", false);
+	// 	} else {
+	// 	if ($('.checks').filter(':checked').length < 1){
+	// 	$('.exportdata').attr('disabled',true);}
+	// 	}
+	// });
+
+	$(".patId").on("click", function () {
+		if ($("input:checkbox").prop("checked")) {
+			$(".exportdata").prop('disabled',false);
+			$(this).prop("checked", true);
+		}
+	});
+
 	function exportData(){
+
 		let patientId = [];
 		$(".patId").each(function() {
 			if(this.checked){
