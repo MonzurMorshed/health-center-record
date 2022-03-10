@@ -253,6 +253,7 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 				patientId.push($(this).val());
 			}
 		});
+		
 		console.log(patientId);
 		$.ajax({
 			url : 'custom_export.php',
