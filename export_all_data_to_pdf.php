@@ -5,17 +5,18 @@ include ("loginChk.php");
 $ObjPatientRecord = new patientRecord();
 
 $c = 1;
-// Getting list of patient id
-// print_r($_GET['id']);
-// $idlist = implode(',', $_GET['id']);
-$c .= " AND patient_id IN (" . $_GET['id'] . ")"; // condition for specific data
+
 $patient_details = $ObjPatientRecord->patient_details($c);
+// print_r($patient_details);
+// exit;
 $html = '';
+
 for ($i=0;$i<count($patient_details);$i++){
 
-    if($i != 0){
-      $html .= '<div style="page-break-after: always;"></div>';
-    }
+  if($i != 0){
+    $html .= '<div style="page-break-after: always;"></div>';
+  }
+    
     $ObjPatientRecord->row		= $patient_details[$i];
                     
     $ObjPatientRecord->patient_id 			= $ObjPatientRecord->row['patient_id'];
@@ -778,16 +779,11 @@ $pdf->setMargins(PDF_MARGIN_LEFT, PDF_MARGIN_TOP, PDF_MARGIN_RIGHT);
 $pdf->setHeaderMargin(PDF_MARGIN_HEADER);
 $pdf->setFooterMargin(PDF_MARGIN_FOOTER);
 
-// set auto page breaks
-// $pdf->setAutoPageBreak(TRUE, PDF_MARGIN_BOTTOM);
 
-// set image scale factor
 $pdf->setImageScale(PDF_IMAGE_SCALE_RATIO);
 
 // ---------------------------------------------------------
 
-// set default font subsetting mode
-// $pdf->setFontSubsetting(true);
 
 
 $pdf->setFont('dejavusans', '', 10, '', true);
@@ -795,11 +791,6 @@ $pdf->setFont('dejavusans', '', 10, '', true);
 
 $pdf->AddPage();
 
-
-// $pdf->setTextShadow(array('enabled'=>true, 'depth_w'=>0.2, 'depth_h'=>0.2, 'color'=>array(196,196,196), 'opacity'=>1, 'blend_mode'=>'Normal'));
-
-
-// $pdf->writeHTMLCell(0, 0, '', '', $html, 0, 1, 0, true, '', true);
 $pdf->writeHTML($html, true, false, true, false, '');
 
 $pdf->Output('health_record.pdf', 'D'); // Download use - D
