@@ -813,7 +813,10 @@ if(isset($_GET['pid']))
          			</div>
                     
                     <div class="action">
-                    <input name="Save" value="Save" type="submit" /> <input name="Cancel" value="Cancel" type="reset" /> <!--input name="Print Preview" value="Print Preview" type="button" /> <input name="Print Preview" value="Create Card" type="button" /-->
+                    <input name="Save" value="Save" type="submit" /> 
+                    <input name="Cancel" value="Cancel" type="reset" />
+                     <!-- input name="Print Preview" value="Print Preview" type="button" /> 
+                     <input name="Print Preview" value="Create Card" type="button" /-->
                     </div>
             </form>
         </div>

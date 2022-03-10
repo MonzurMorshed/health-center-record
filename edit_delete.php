@@ -238,12 +238,14 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 	// 	}
 	// });
 
+	/*
 	$(".patId").on("click", function () {
 		if ($("input:checkbox").prop("checked")) {
 			$(".exportdata").prop('disabled',false);
 			$(this).prop("checked", true);
 		}
 	});
+	*/
 
 	function exportData(){
 
