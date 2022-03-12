@@ -42,6 +42,7 @@ else
 
 			$file = fopen($filename, "r");
 			$i = 0;
+			$flag = 0;
 	        while (($getData = fgetcsv($file, 10000, ",")) !== FALSE)
 			{
 				$total_data = count($getData);
@@ -50,7 +51,7 @@ else
 					break; 
 				}else{
 					if ($i == 0) { $i++; continue; }
-					
+					$flag = 1;
 					$patient_birth_date = date('Y-m-d',strtotime($getData[5]));
 					$date_of_examination = date('Y-m-d',strtotime($getData[9]));
 					$addon = date('Y-m-d H:i:s',strtotime($getData[106]));
@@ -102,15 +103,15 @@ else
 
 					$result = $db->executeQuery($sql);
 
-					if($result){
-						echo "<script>alert('Data uploaded successfully.');</script>";
-					}
-
 					$i++;
 				}
-	         }
+	        }
 			
-	         fclose($file);	
+	        fclose($file);
+
+			if($flag == 1){
+				echo "<script>alert('Data uploaded successfully.');</script>";
+			}
 
 			 
 		}

@@ -115,6 +115,10 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 			<input type="submit" name="Export" disabled="true" class="exportdata btn btn-success" value="Export to excel"  onClick="exportData()"/>
             <input type="submit" name="Pdf" disabled="true" class="exportdata btn btn-success" value="Export to pdf"  onClick="exportDataAsPdf()"/>
             
+			<form action="/mmahospital/export.php" method="post" class="niceform">
+              <input name="date" type="date"/> 
+			  <input name="schedulebackupsubmit" type="submit" value="Schedule Backup"/>
+        	</form>
 			
         </div><!--/search-->
         
@@ -256,7 +260,6 @@ $ObjPatientRecord->res					= $db->executeQuery($ObjPatientRecord->sql);
 			}
 		});
 		
-		console.log(patientId);
 		$.ajax({
 			url : 'custom_export.php',
 			method : 'POST',
