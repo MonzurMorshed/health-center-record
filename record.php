@@ -290,7 +290,7 @@
    }
    
    ?>
-<?php // include("header.php");?>
+<?php include("header-Ihtish.php");?>
 <script>
    function calculateBMI()
    {
@@ -356,6 +356,26 @@
   .habbits input{
     margin-top: 10px;
   }
+  .formStyle{
+    width: 20rem;
+    display: inline;
+  }
+  .examination input, .examination span, .investigations input, .investigations span, .urin input, .urin span {
+    display: inline;
+  }
+  tr.invest_header th {
+      padding: 10px;
+      border: 1px solid #000;
+  }
+  .fitness{
+    padding: 15px;
+    background: #CBDBC7;
+    top: -20px;
+  }
+  .fitness input, .fitness label {
+    margin-left: 10px;
+    margin-top: 10px;
+  }
 </style>
 <!-- end -->
 <div class="cf"></div>
@@ -402,7 +422,7 @@
                   <tr class="">
                      <td class="col-md-2"><label >Date of Birth:</label></td>
                      <td class="col-md-4">
-                        <input class="form-control form-control-sm col-md-12" name="patient_birth_date" id="patient_birth_date" value="<?php echo $ObjPatientRecord->patient_birth_date?>" type="text" size="10" readonly onblur="calculateAge();" /> 
+                        <input class="form-control form-control-sm col-md-12" name="patient_birth_date" id="patient_birth_date" value="<?php echo $ObjPatientRecord->patient_birth_date?>" type="date" size="10" onblur="calculateAge();" /> 
                         <script language="JavaScript">
                            new tcal ({
                            		// form name
@@ -425,7 +445,7 @@
                         <label class="form-check-label ml-3"> Female</label>
                      <td class="col-md-2"><label>Date of Examination:</label></td>
                      <td class="col-md-4">
-                        <input class="form-control form-control-sm col-md-12" name="date_of_examination" value="<?php echo $ObjPatientRecord->date_of_examination;?>" type="text" size="10" readonly /> 
+                        <input class="form-control form-control-sm col-md-12" name="date_of_examination" value="<?php echo $ObjPatientRecord->date_of_examination;?>" type="date" size="10" /> 
                         <script language="JavaScript">
                            new tcal ({
                            		// form name
@@ -562,25 +582,25 @@
                   </tr>
                   <tr>
                      <td class="col-md-2"><label class="form-label">Physical Handicaps:</label></td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="pysical_handicap" value="<?php echo $ObjPatientRecord->pysical_handicap;?>" type="text" size="40" /></td>
+                     <td class="col-md-4"><input class="formStyle form-control form-control-sm col-md-12" name="pysical_handicap" value="<?php echo $ObjPatientRecord->pysical_handicap;?>" type="text" size="40" /></td>
                      <td class="col-md-2"><label class="form-label">Present Complaints:</label></td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="present_compliaints" value="<?php echo $ObjPatientRecord->present_compliaints;?>" type="text" size="40" /></td>
+                     <td class="col-md-4"><input class="formStyle form-control form-control-sm col-md-12" name="present_compliaints" value="<?php echo $ObjPatientRecord->present_compliaints;?>" type="text" size="40" /></td>
                   </tr>
                   <tr>
                      <td class="col-md-2"><label class="form-label">H/O Any Occupation Related<br />
                         Health Hazard:</label>
                      </td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="HO_health_hazatd" value="<?php echo $ObjPatientRecord->HO_health_hazatd;?>" type="text" size="40" /></td>
+                     <td class="col-md-4"><input class="formStyle form-control form-control-sm col-md-12" name="HO_health_hazatd" value="<?php echo $ObjPatientRecord->HO_health_hazatd;?>" type="text" size="40" /></td>
                      <td class="col-md-2"><label class="form-label">Bowels / Micturation:</label></td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="mutation" value="<?php echo $ObjPatientRecord->mutation;?>" type="text" size="40" /></td>
+                     <td class="col-md-4"><input class="formStyle form-control form-control-sm col-md-12" name="mutation" value="<?php echo $ObjPatientRecord->mutation;?>" type="text" size="40" /></td>
                   </tr>
                   <tr>
                      <td class="col-md-2"><label class="form-label">H/O Any Allergies<br />
                         (Including Drugs):</label>
                      </td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="HO_allergies" value="<?php echo $ObjPatientRecord->HO_allergies;?>" type="text" size="40" /></td>
-                     <td class="col-md-2"><label class="form-label">Obs. / Gyneac:</label></td>
-                     <td class="col-md-4"><input class="form-control form-control-sm col-md-12" name="obs_gyneac" value="<?php echo $ObjPatientRecord->obs_gyneac;?>" type="text" size="40" /></td>
+                     <td class="col-md-4"><input class="formStyle  form-control form-control-sm col-md-12" name="HO_allergies" value="<?php echo $ObjPatientRecord->HO_allergies;?>" type="text" size="40" /></td>
+                     <td class="col-md-2"><label class="formStyle  form-label">Obs. / Gyneac:</label></td>
+                     <td class="col-md-4"><input class="formStyle  form-control form-control-sm col-md-12" name="obs_gyneac" value="<?php echo $ObjPatientRecord->obs_gyneac;?>" type="text" size="40" /></td>
                   </tr>
                   <tr>
                      <td><label>H/O Exposure:</label></td>
@@ -604,24 +624,24 @@
                   </tr>
                   <tr>
                      <td class="col-md-1"><label class="form-label">Height:</label></td>
-                     <td class="col-md-2">
-                        <input class="form-control form-control-sm col-md-12" name="height" id="height" value="<?php echo $ObjPatientRecord->height;?>" type="text" size="10" />
-                      Mtrs.
+                     <td class="col-md-2 examination">
+                        <input class="form-control form-control-sm col-md-8" name="height" id="height" value="<?php echo $ObjPatientRecord->height;?>" type="text" size="10" />
+                      <span>Mtrs.</span>
                      </td>
                      <td class="col-md-1"><label class="form-label">Weight:</label></td>
-                     <td class="col-md-2">
-                        <input class="form-control form-control-sm col-md-12" name="weight" id="weight" value="<?php echo $ObjPatientRecord->weight;?>" type="text" size="10" />
-                    Kg.
+                     <td class="col-md-2 examination">
+                        <input class="form-control form-control-sm col-md-8" name="weight" id="weight" value="<?php echo $ObjPatientRecord->weight;?>" type="text" size="10" />
+                    <span>Kg.</span>
                      </td>
                      <td class="col-md-1"><label class="form-label">B.P.:</label></td>
-                     <td class="col-md-2">
-                        <input class="form-control form-control-sm col-md-12" name="BP" value="<?php echo $ObjPatientRecord->BP;?>" type="text" size="10" />
-                      mmhg
+                     <td class="col-md-2 examination">
+                        <input class="form-control form-control-sm col-md-8" name="BP" value="<?php echo $ObjPatientRecord->BP;?>" type="text" size="10" />
+                     <span> mmhg</span>
                      </td>
                      <td class="col-md-1"><label class="form-label">Pulse:</label></td>
-                     <td class="col-md-2">
-                        <input class="form-control form-control-sm col-md-12" name="pulse" value="<?php echo $ObjPatientRecord->pulse;?>" type="text" />
-                        / Min.
+                     <td class="col-md-2 examination">
+                        <input class="form-control form-control-sm col-md-8" name="pulse" value="<?php echo $ObjPatientRecord->pulse;?>" type="text" />
+                        <span>/ Min.</span>
                      </td>
                      <td>
                         <!--label>BMI:</label-->
@@ -715,7 +735,7 @@
                      <td valign="top">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="invest">
                            <thead>
-                              <tr>
+                              <tr class="invest_header">
                                  <th>CBC</th>
                                  <th>Employee's Values</th>
                                  <th>Normal Values</th>
@@ -723,37 +743,37 @@
                            </thead>
                            <tr>
                               <td>Heamoglobin</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="heamoglobin" value="<?php echo $ObjPatientRecord->heamoglobin;?>" type="text" size="7" /> <b>gms/100ml</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="heamoglobin" value="<?php echo $ObjPatientRecord->heamoglobin;?>" type="text" size="7" /> <span>gms/100ml</span></td>
                               <td>13.5-18.5 <b>gms/100ml</b></td>
                            </tr>
                            <tr>
                               <td>Total WBC Count</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="total_count" value="<?php echo $ObjPatientRecord->total_count;?>" type="text" size="7" /> <b>/cu mm</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="total_count" value="<?php echo $ObjPatientRecord->total_count;?>" type="text" size="7" /> <span>/cu mm</span></td>
                               <td>4000-11000 <b>/cu mm</b></td>
                            </tr>
                            <tr>
                               <td>DC: Neutrophil</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="DC_nutrophil" value="<?php echo $ObjPatientRecord->DC_nutrophil;?>" type="text" size="7" /> <b>%</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="DC_nutrophil" value="<?php echo $ObjPatientRecord->DC_nutrophil;?>" type="text" size="7" /> <span>%</span></td>
                               <td>40-70 <b>%</b></td>
                            </tr>
                            <tr>
                               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Eosinophil</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="eosinophil" id="eosinophil" value="<?php echo $ObjPatientRecord->eosinophil;?>" type="text" size="7" /> <b>%</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="eosinophil" id="eosinophil" value="<?php echo $ObjPatientRecord->eosinophil;?>" type="text" size="7" /> <span>%</span></td>
                               <td>1-6 <b>%</b></td>
                            </tr>
                            <tr>
                               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lymphocyte</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="lymphocyte" id="lymphocyte" value="<?php echo $ObjPatientRecord->lymphocyte;?>" type="text" size="7" /> <b>%</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="lymphocyte" id="lymphocyte" value="<?php echo $ObjPatientRecord->lymphocyte;?>" type="text" size="7" /> <span>%</span></td>
                               <td>20-45 <b>%</b></td>
                            </tr>
                            <tr>
                               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Basophil</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="basophill" id="basophill" value="<?php echo $ObjPatientRecord->basophill;?>" type="text" size="7" /> <b>%</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="basophill" id="basophill" value="<?php echo $ObjPatientRecord->basophill;?>" type="text" size="7" /> <span>%</span></td>
                               <td>0-1 <b>%</b></td>
                            </tr>
                            <tr>
                               <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Monocyte</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="monocyte" id="monocyte" value="<?php echo $ObjPatientRecord->monocyte;?>" type="text" size="7" onBlur="calculateCBC();" /> <b>%</b></td>
+                              <td class="investigations"><input class="form-control form-control-sm col-md-6" name="monocyte" id="monocyte" value="<?php echo $ObjPatientRecord->monocyte;?>" type="text" size="7" onBlur="calculateCBC();" /> <span>%</span></td>
                               <td>1-8 <b>%</b></td>
                            </tr>
                         </table>
@@ -762,7 +782,7 @@
                      <td valign="top">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0" class="invest">
                            <thead>
-                              <tr>
+                              <tr class="invest_header">
                                  <th>Urine Test</th>
                                  <th>&nbsp;</th>
                               </tr>
@@ -777,15 +797,15 @@
                            </tr>
                            <tr>
                               <td>RBC</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="RBC" value="<?php echo $ObjPatientRecord->RBC;?>" type="text" size="7" /> <b>/hpf</b></td>
+                              <td class="urin"><input class="form-control form-control-sm col-md-6" name="RBC" value="<?php echo $ObjPatientRecord->RBC;?>" type="text" size="7" /> <span>/hpf</span></td>
                            </tr>
                            <tr>
                               <td>Pus Cells</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="pus_cell" value="<?php echo $ObjPatientRecord->pus_cell;?>" type="text" size="7" /> <b>/hpf</b></td>
+                              <td class="urin"><input class="form-control form-control-sm col-md-6" name="pus_cell" value="<?php echo $ObjPatientRecord->pus_cell;?>" type="text" size="7" /> <span>/hpf</span></td>
                            </tr>
                            <tr>
                               <td>Epithelial Cells</td>
-                              <td><input class="form-control form-control-sm col-md-6" name="epithelial_cell" value="<?php echo $ObjPatientRecord->epithelial_cell;?>" type="text" size="7" /> <b>/hpf</b></td>
+                              <td class="urin"><input class="form-control form-control-sm col-md-6" name="epithelial_cell" value="<?php echo $ObjPatientRecord->epithelial_cell;?>" type="text" size="7" /> <span>/hpf</span></td>
                            </tr>
                            <tr>
                               <td>Other</td>
@@ -801,20 +821,22 @@
                      <td colspan="3" valign="top">
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                            <tr>
-                              <td width="15%"><label>Blood Group:</label><br />
+                              <td width=""><label class="form-input-label">Blood Group:</label><br />
                                  <input class="form-control form-control-sm col-md-6" name="blood_group" value="<?php echo $ObjPatientRecord->blood_group;?>" type="text" size="15" />
                               </td>
-                              <td width="15%"><label>Rh Factor:</label><br />
+                              <td width=""><label class="form-input-label">Rh Factor:</label><br />
                                  <input class="form-control form-control-sm col-md-6" name="RHfactor" value="<?php echo $ObjPatientRecord->RHfactor;?>" type="text" size="15" />
                               </td>
-                              <td width="15%"><label>ESR:</label><br />
+                              <td width=""><label class="form-input-label">ESR:</label><br />
                                  <input class="form-control form-control-sm col-md-6" name="ESR" value="<?php echo $ObjPatientRecord->ESR;?>" type="text" size="15" />
                               </td>
-                              <td width="20%"><label>Cholesterol:</label><br />
-                                 <input class="form-control form-control-sm col-md-6" name="cholesterol" value="<?php echo $ObjPatientRecord->cholesterol;?>" type="text" size="15" /> <b>mg/dl</b>
+                              <td width=""><label class="form-input-label">Cholesterol:</label><br />
+                                 <input class="form-control form-control-sm col-md-6 d-inline" name="cholesterol" value="<?php echo $ObjPatientRecord->cholesterol;?>" type="text" size="15" /> <b class="d-inline">mg/dl</b>
                               </td>
-                              <td><label>BSL:</label><br />
-                                 Random <input class="form-control form-control-sm col-md-6" name="BSL_random" value="<?php echo $ObjPatientRecord->BSL_random;?>" type="text" size="5" /> &nbsp;&nbsp;&nbsp;F <input name="BSL_FF" value="<?php echo $ObjPatientRecord->BSL_FF;?>" type="text" size="5" /> &nbsp;&nbsp;&nbsp;PP <input name="BSL_PP" value="<?php echo $ObjPatientRecord->BSL_PP;?>" type="text" size="5" />
+                              <td><label  class="form-input-label">BSL:</label> Random
+                                 <input class="form-control form-control-sm col-md-6" name="BSL_random" value="<?php echo $ObjPatientRecord->BSL_random;?>" type="text" size="5" /> 
+                                 &nbsp;&nbsp;&nbsp;F <input  class="form-control form-control-sm col-md-2 d-inline" name="BSL_FF" value="<?php echo $ObjPatientRecord->BSL_FF;?>" type="text" size="5" /> 
+                                 &nbsp;&nbsp;&nbsp;PP <input class="form-control form-control-sm col-md-2 d-inline"  name="BSL_PP" value="<?php echo $ObjPatientRecord->BSL_PP;?>" type="text" size="5" />
                               </td>
                            </tr>
                            <tr>
@@ -830,8 +852,8 @@
                               <td><label>X-ray Chest:</label><br />
                                  <input class="form-control form-control-sm col-md-6" name="x_ray_chest" value="<?php echo $ObjPatientRecord->x_ray_chest;?>" type="text" size="15" />
                               </td>
-                              <td><label>KFT:</label><br />
-                                 Blood Urea <input class="form-control form-control-sm col-md-6" name="KFT_blood_urea" value="<?php echo $ObjPatientRecord->KFT_blood_urea;?>" type="text" size="5" /> &nbsp;&nbsp;&nbsp;Serum Creatinine <input name="KFT_serum" value="<?php echo $ObjPatientRecord->KFT_serum;?>" type="text" size="5" />
+                              <td><label>KFT:</label>Blood Urea <input class="form-control form-control-sm col-md-6" name="KFT_blood_urea" value="<?php echo $ObjPatientRecord->KFT_blood_urea;?>" type="text" size="5" />
+                               &nbsp;&nbsp;&nbsp;Serum Creatinine <input class="form-control form-control-sm col-md-6 d-inline" name="KFT_serum" value="<?php echo $ObjPatientRecord->KFT_serum;?>" type="text" size="5" />
                               </td>
                            </tr>
                         </table>
@@ -864,27 +886,29 @@
                </table>
             </div>
          </div>
-         <div class="box_container result">
-            <label class="form-check-label">Medical Fitness:</label> 
-            <input class="form-check-input" name="medical_fitness" value="Y" type="radio" <?php if($ObjPatientRecord->medical_fitness =="Y"){ echo "checked='checked'"; }?> /><label>FIT</label>
-            <input class="form-check-input" name="medical_fitness" value="N" type="radio" <?php if($ObjPatientRecord->medical_fitness =="N"){ echo "checked='checked'"; }?> /><label>UNFIT</label>
+         <div class="box_container fitness">
+            <strong>Medical Fitness:</strong> 
+            <input class="form-check-input" name="medical_fitness" value="Y" type="radio" <?php if($ObjPatientRecord->medical_fitness =="Y"){ echo "checked='checked'"; }?> />
+            <label class="form-check-label ml-5">FIT</label>
+            <input class="form-check-input" name="medical_fitness" value="N" type="radio" <?php if($ObjPatientRecord->medical_fitness =="N"){ echo "checked='checked'"; }?> />
+            <label class="form-check-label ml-5">UNFIT</label>
          </div>
          <div class="box_container doctor">
             <label class="form-label">Doctor:</label> 
-            <b style="margin-right:3px;">Name:</b> Dr.
-            <input class="form-control form-control-sm col-md-6" name="doctor_name" value="<?php echo $ObjPatientRecord->doctor_name;?>" type="text" size="50" />
-            <b style="margin-right:3px;">Qualifications:</b>
-            <input class="form-control form-control-sm col-md-6" name="docyor_qualification" value="<?php echo $ObjPatientRecord->docyor_qualification;?>" type="text" size="50" />
+            <b class="col-md-2 d-inline" style="margin-right:3px;">Name:</b> Dr.
+            <input class="form-control form-control-sm col-md-4 d-inline" name="doctor_name" value="<?php echo $ObjPatientRecord->doctor_name;?>" type="text" size="50" />
+            <b class="col-md-2 d-inline" style="margin-right:3px;">Qualifications:</b>
+            <input class="form-control form-control-sm col-md-4 d-inline" name="docyor_qualification" value="<?php echo $ObjPatientRecord->docyor_qualification;?>" type="text" size="50" />
          </div>
          <div class="box_container doctor">
             <label class="form-label">Authorized Certifying Surgeon:</label> 
-            <b style="margin-right:3px;">Name:</b> Dr.
-            <input class="form-control form-control-sm col-md-6" name="surgeonName" value="<?php echo $ObjPatientRecord->surgeonName;?>" type="text" size="50" />
-            <b style="margin-right:3px;">Qualifications:</b>
-            <input class="form-control form-control-sm col-md-6" name="surgeonQualifications" value="<?php echo $ObjPatientRecord->surgeonQualifications;?>" type="text" size="40" />
+            <b class="col-md-2 d-inline" style="margin-right:3px;">Name:</b> Dr.
+            <input class="form-control form-control-sm col-md-4  d-inline" name="surgeonName" value="<?php echo $ObjPatientRecord->surgeonName;?>" type="text" size="50" />
+            <b class="col-md-2 d-inline" style="margin-right:3px;">Qualifications:</b>
+            <input class="form-control form-control-sm col-md-4  d-inline" name="surgeonQualifications" value="<?php echo $ObjPatientRecord->surgeonQualifications;?>" type="text" size="40" />
          </div>
          <div class="action">
-            <input class="btn btn-sm btn-primary col-md-2" name="Save" value="Save" type="submit" /> 
+            <input class="btn btn-sm btn-success col-md-2" name="Save" value="Save" type="submit" /> 
             <input class="btn btn-sm btn-danger col-md-2" name="Cancel" value="Cancel" type="reset" />
             <!-- input name="Print Preview" value="Print Preview" type="button" /> 
                <input name="Print Preview" value="Create Card" type="button" /-->
@@ -898,4 +922,4 @@
 <!-- Footer Section -->
 <?php //include("footer.php");?>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>formStyle 
