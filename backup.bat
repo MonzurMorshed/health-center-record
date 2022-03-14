@@ -1,0 +1,1 @@
+"C:\xampp\php\php.exe" -f "F:\new_xampp\htdocs\mmahospital\schedule.php"
